@@ -1,17 +1,12 @@
 <template>
   <div class="hello"></div>
-  <v-btn color="blue" @click="$router.push('./base')">
-    はらぺこバハムートへ
+  <v-btn color="blue" @click="$router.push('./PlayGame')">
+    はらぺこバハムートをプレイ！！
   </v-btn>
-</div></template>
+</template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

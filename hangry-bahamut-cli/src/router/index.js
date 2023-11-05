@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Base from '@/components/BaseHungryBahamuto.vue'
+import Base from '@/components/CardList.vue'
 
 const routes = [
   {
@@ -24,10 +24,18 @@ const routes = [
   },
   // カードリスト
   {
-    path: '/cardList',
-    name: 'cardList',
+    path: '/CardList',
+    name: 'CardList',
+    // ↓このインポートの方法だと、スマートでよい。インポートエリアをいちいち見に行かなくてよい。
     component: () =>
-      import(/* webpackChunkName: 'cardList' */ '../components/BaseHungryBahamuto.vue')
+      import(/* webpackChunkName: 'CardList' */ '../components/CardList.vue')
+  },
+  // ゲームプレイ画面
+  {
+    path: '/PlayGame',
+    name: 'PlayGame',
+    component: () =>
+      import(/* webpackChunkName: 'PlayGame' */ '../components/PlayGame.vue')
   }
 ]
 
