@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <MainMenu msg="Welcome to Your Vue.js App" />
+    <v-img :src="require('@/assets/haraPecoMain.png')" />
+    <PlayButton mt="100px"></PlayButton>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import MainMenu from '@/components/MainMenu.vue'
+
+import PlayButton from '@/components/PlayButton.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    MainMenu
+    /* eslint-disable */
+    PlayButton
   }
 }
 </script>
+
+<style>
+.PlayButton {
+  left: 20px;
+  /* 左から20px */
+}
+</style>
