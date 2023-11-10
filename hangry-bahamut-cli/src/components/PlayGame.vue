@@ -1,10 +1,29 @@
 <template>
   <v-container class="PlayGame">
-    <!-- 相手のカードゾーン -->
-    <EnemyHands></EnemyHands>
-    <v-card class="enemy-card-body" color="red-lighten-3">
-      <v-card-title class="enemy-card-title">相手のクリーチャー</v-card-title>
-    </v-card>
+    <!-- 相手の手札ゾーン -->
+    <v-row>
+      <v-col cols="10">
+        <EnemyHands></EnemyHands>
+      </v-col>
+      <v-col cols="1">
+        <CancelChips></CancelChips>
+      </v-col>
+      <v-col cols="1">
+        <LifeCounter></LifeCounter>
+      </v-col>
+    </v-row>
+    <!-- 相手バトルフィールド -->
+    <v-row>
+      <v-col cols="10">
+        <v-card class="enemy-card-body" color="red-lighten-3">
+          <v-card-title class="enemy-card-title">相手のクリーチャー</v-card-title>
+        </v-card>
+      </v-col>
+      <v-col>
+        <CancelChips class="mb-4"></CancelChips>
+      </v-col>
+    </v-row>
+
     <v-row>
       <!-- 自分のカードゾーン -->
       <v-col cols="10">
@@ -30,13 +49,17 @@ import Deck from './Deck.vue'
 import Discard from './Discard.vue'
 import MyHands from './MyHands.vue'
 import EnemyHands from './EnemyHands.vue'
+import CancelChips from './CancelChips.vue'
+import LifeCounter from './LifeCounter.vue'
 /* eslint-disable */
 export default {
   components: {
     Deck,
     Discard,
     EnemyHands,
-    MyHands
+    MyHands,
+    LifeCounter,
+    CancelChips
   },
   data() {
     return {
